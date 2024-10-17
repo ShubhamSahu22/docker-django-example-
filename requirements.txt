@@ -1,0 +1,7 @@
+Django==3.2.24           # Latest LTS version
+gunicorn==20.1.0         # Latest stable version
+whitenoise==6.5.0        # Latest stable version
+psycopg2==2.9.9          # Latest stable version
+django-redis==5.4.0      # Latest stable version
+celery==5.3.4            # Latest stable version
+flake8==6.1.0            # Latest stable version
