@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}Your App Title{% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A production-ready Django app example using Docker and Docker Compose.">
+
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <script defer src="{% static 'js/app.js' %}"></script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'safari-pinned-tab.svg' %}" color="#61b9d2">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="flex flex-col min-h-screen justify-between bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-gray-700 py-3">
+      <div class="max-w-screen-lg mx-auto flex items-center justify-between px-6">
+        <div class="flex items-center">
+          <span class="p-2 bg-gray-900 rounded-lg">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </span>
+          <p class="ml-3 font-medium text-white">
+            Django {{ django_ver }} and Python {{ python_ver }}
+          </p>
+        </div>
+        <div>
+          <span class="inline-flex items-center px-4 py-2 bg-gray-500 text-white rounded-md text-sm font-medium">
+            DEBUG = {{ debug }}
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-screen-lg mx-auto flex-grow px-6 py-6">
+      {% block body %}{% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-white text-center py-4">
+      <p class="text-gray-500">
+        Built with <svg class="h-5 w-5 text-red-600 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+        </svg> by <a class="border-b" href="https://nickjanetakis.com">Nick Janetakis</a>
+      </p>
+    </footer>
+  </body>
+</html>
